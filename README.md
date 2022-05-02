@@ -33,22 +33,55 @@ Write the detailed procedure here
 
 
 ## Program:
+```
 /*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by:K.M.SWETHA 
+RegisterNumber: 212221240055
+
+HALF SUBTRACTOR
+
+module HalfSubtractor(A,B,Diff,Borrow);
+input A,B;
+output Diff,Borrow;
+wire x;
+xor (Diff, A,B);
+not(x,A);
+and(Borrow,x,B);
+endmodule
+
+FULL SUBTRACTOR
+
+module FullSubtractor(A,B,C,Diff,Borrow);
+input A,B,C;
+output Diff,Borrow;
+wire p;
+assign Diff = ((A^B)^C);
+not(p,A);
+assign Borrow = ((p&B)|(p&C)|(B&C));
+endmodule
 */
+```
 
 ## Output:
-
+### Half Subtractor:
+### Logic Symbol
+![output](./hsgates.png)
 ## Truthtable
-
-
-
+![output](./hstable.png)
 ##  RTL realization
-
-
+![output](./hsrtl.png)
 ## Timing diagram 
+![output](./hstiming.png)
 
+## Full Subtractor:
+### Logic Symbol
+![output](./fsgates.png)
+## Truthtable
+![output](./fstable.png)
+##  RTL realization
+![output](./fsrtl.png)
+## Timing diagram 
+![output](./fstiming.png)
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
